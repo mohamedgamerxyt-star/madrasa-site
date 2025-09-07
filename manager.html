@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرحبا بالمديرة عائشة</title>
+  <meta charset="UTF-8">
+  <title>صفحة المديرة</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: block;
+      margin: 15px auto;
+      padding: 12px 20px;
+      background: #0077b6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: 0.3s;
+      width: 80%;
+    }
+
+    .btn:hover {
+      background: #005f87;
+    }
+  </style>
 </head>
 <body>
-    <script>
-        if(sessionStorage.getItem("loggedIn") !== "true") {
-            alert("يجب تسجيل الدخول أولا!");
-            window.location.href = "login.html";
-        }
-    </script>
 
-    <h1>مرحبا بك يا مديرة عائشة</h1>
-    <p>هنا يمكنك رؤية معلومات التلاميذ وإدارة المدرسة.</p>
+<header>
+  <h1>لوحة تحكم المديرة عائشة</h1>
+</header>
+
+<div class="container">
+  <h2>مرحبا بكِ يا مديرة 👩‍💼</h2>
+  <a href="register.html" class="btn">📘 تسجيل التلاميذ</a>
+  <a href="workers.html" class="btn">👨‍🏫 صفحة العمال</a>
+  <a href="index.html" class="btn">🏠 الرجوع للصفحة الرئيسية</a>
+</div>
+
 </body>
 </html>
