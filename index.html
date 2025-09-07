@@ -2,14 +2,14 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>صفحة المديرة</title>
+  <title>مدرسة الأنفال الخاصة</title>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
       direction: rtl;
+      background: #f0f4f8;
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
     }
 
     header {
@@ -20,8 +20,8 @@
     }
 
     .container {
-      max-width: 700px;
-      margin: 40px auto;
+      max-width: 400px;
+      margin: 60px auto;
       background: white;
       padding: 25px;
       border-radius: 10px;
@@ -30,40 +30,79 @@
     }
 
     h2 {
-      color: #333;
       margin-bottom: 20px;
+      color: #333;
     }
 
-    .btn {
-      display: block;
-      margin: 15px auto;
-      padding: 12px 20px;
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin: 10px 0;
+      width: 90%;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
       background: #0077b6;
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
       font-size: 16px;
-      transition: 0.3s;
-      width: 80%;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 95%;
     }
 
-    .btn:hover {
+    button:hover {
       background: #005f87;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>لوحة تحكم المديرة عائشة</h1>
+  <h1>مرحبا بكم في مدرسة الأنفال الخاصة</h1>
 </header>
 
-<div class="container">
-  <h2>مرحبا بكِ يا مديرة 👩‍💼</h2>
-  <a href="register.html" class="btn">📘 تسجيل التلاميذ</a>
-  <a href="workers.html" class="btn">👨‍🏫 صفحة العمال</a>
-  <a href="index.html" class="btn">🏠 الرجوع للصفحة الرئيسية</a>
+<div class="container" id="main-menu">
+  <h2>اختر الصفحة</h2>
+  <button onclick="showManagerLogin()">صفحة المدير</button>
+  <button onclick="goRegister()">تسجيل التلاميذ</button>
 </div>
+
+<!-- صفحة تسجيل الدخول للمدير -->
+<div class="container" id="manager-login" style="display:none;">
+  <h2>تسجيل الدخول - المديرة عائشة</h2>
+  <input type="password" id="password" placeholder="أدخل كلمة السر">
+  <button onclick="checkPassword()">دخول</button>
+  <p id="error"></p>
+</div>
+
+<script>
+  function showManagerLogin() {
+    document.getElementById('main-menu').style.display = 'none';
+    document.getElementById('manager-login').style.display = 'block';
+  }
+
+  function goRegister() {
+    window.location.href = "register.html";
+  }
+
+  function checkPassword() {
+    const pass = document.getElementById('password').value;
+    if (pass === "2019") {
+      window.location.href = "manager.html"; // تحويل للمديرة
+    } else {
+      document.getElementById('error').textContent = "❌ كلمة السر غير صحيحة";
+    }
+  }
+</script>
 
 </body>
 </html>
