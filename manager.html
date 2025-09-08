@@ -4,66 +4,51 @@
   <meta charset="UTF-8">
   <title>صفحة المديرة</title>
   <style>
-    body {
-      font-family: 'Tahoma', sans-serif;
-      direction: rtl;
-      margin: 0;
-      padding: 0;
-      background: #f0f4f8;
-    }
-
-    header {
-      background: #0077b6;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      display: block;
-      margin: 15px auto;
-      padding: 12px 20px;
-      background: #0077b6;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      transition: 0.3s;
-      width: 80%;
-    }
-
-    .btn:hover {
-      background: #005f87;
-    }
+    body { font-family: 'Tahoma', sans-serif; direction: rtl; background: #f0f4f8; text-align: center; }
+    .container { max-width: 800px; margin: 50px auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #0077b6; color: white; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>لوحة تحكم المديرة عائشة</h1>
-</header>
-
 <div class="container">
-  <h2>مرحبا بكِ يا مديرة 👩‍💼</h2>
-  <a href="register.html" class="btn">📘 تسجيل التلاميذ</a>
-  <a href="workers.html" class="btn">👨‍🏫 صفحة العمال</a>
-  <a href="index.html" class="btn">🏠 الرجوع للصفحة الرئيسية</a>
+  <h2>مرحبا بك يا المديرة عائشة</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>اسم الولي</th>
+        <th>اسم التلميذ</th>
+        <th>لقب التلميذ</th>
+        <th>السنة الدراسية</th>
+        <th>رقم الهاتف</th>
+      </tr>
+    </thead>
+    <tbody id="studentsTable">
+      <!-- البيانات ستظهر هنا -->
+    </tbody>
+  </table>
 </div>
+
+<script>
+  const tbody = document.getElementById('studentsTable');
+
+  // قراءة الطلاب من LocalStorage
+  let students = JSON.parse(localStorage.getItem('students') || '[]');
+
+  students.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${s.parent}</td>
+      <td>${s.student}</td>
+      <td>${s.lastname}</td>
+      <td>${s.year}</td>
+      <td>${s.phone}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+</script>
 
 </body>
 </html>
