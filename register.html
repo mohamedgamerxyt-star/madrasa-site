@@ -3,30 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <title>تسجيل التلاميذ</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Tahoma', sans-serif; direction: rtl; background: #f0f4f8; text-align: center; }
+    .container { max-width: 400px; margin: 50px auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    input { padding: 10px; width: 90%; margin: 8px 0; border-radius: 6px; border: 1px solid #ccc; }
+    button { padding: 12px; width: 95%; margin-top: 10px; border-radius: 6px; border: none; background: #0077b6; color: white; font-size: 16px; cursor: pointer; }
+    button:hover { background: #005f87; }
+  </style>
 </head>
 <body>
-  <h1>📖 تسجيل التلاميذ</h1>
 
-  <form>
-    <label>اسم الولي:</label>
-    <input type="text" name="parent_name" required><br><br>
-
-    <label>اسم التلميذ:</label>
-    <input type="text" name="student_firstname" required><br><br>
-
-    <label>لقب التلميذ:</label>
-    <input type="text" name="student_lastname" required><br><br>
-
-    <label>السنة الدراسية:</label>
-    <input type="text" name="school_year" required><br><br>
-
-    <label>رقم الهاتف:</label>
-    <input type="tel" name="phone" required><br><br>
-
-    <button type="submit">✅ تسجيل</button>
+<div class="container">
+  <h2>تسجيل التلميذ</h2>
+  <form id="studentForm">
+    <input type="text" id="parent" placeholder="اسم الولي" required>
+    <input type="text" id="student" placeholder="اسم التلميذ" required>
+    <input type="text" id="lastname" placeholder="لقب التلميذ" required>
+    <input type="text" id="year" placeholder="السنة الدراسية" required>
+    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+    <button type="submit">تسجيل</button>
   </form>
+  <p id="msg" style="color:green;"></p>
+</div>
 
-  <p><a href="index.html">⬅ الرجوع للصفحة الرئيسية</a></p>
+<script>
+  const form = document.getElementById('studentForm');
+  const msg = document.getElementById('msg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const student = {
+      parent: document.getElementById('parent').value,
+      student: document.getElementById('student').value,
+      lastname: document.getElementById('lastname').value,
+      year: document.getElementById('year').value,
+      phone: document.getElementById('phone').value
+    };
+
+    // قراءة القائمة القديمة من LocalStorage
+    let students = JSON.parse(localStorage.getItem('students') || '[]');
+    students.push(student);
+
+    // حفظ القائمة الجديدة
+    localStorage.setItem('students', JSON.stringify(students));
+
+    msg.textContent = "✅ تم تسجيل التلميذ بنجاح!";
+    form.reset();
+  });
+</script>
+
 </body>
 </html>
