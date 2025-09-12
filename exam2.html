@@ -3,16 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>السنة الثانية - الاختبارات</title>
-  <style> /* نفس ستايل السنة الأولى */ body { font-family: 'Tahoma', sans-serif; direction: rtl; text-align: center; background: #f0f4f8; margin:0; padding:0; } header { background:#0077b6;color:white;padding:20px; } .container { max-width:500px;margin:40px auto;background:white;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1); } button { display:block;width:100%;padding:15px;margin:10px 0;border:none;border-radius:8px;background:#0077b6;color:white;font-size:18px;cursor:pointer;transition:0.3s; } button:hover { background:#005f87; }</style>
+  <style>
+    body { font-family: 'Tahoma', sans-serif; direction: rtl; background: #f0f4f8; margin:0; padding:0; text-align:center; }
+    header { background:#0077b6; color:white; padding:20px; }
+    .container { max-width:500px; margin:40px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    button { display:block; width:100%; padding:15px; margin:10px 0; border:none; border-radius:8px; background:#0077b6; color:white; font-size:18px; cursor:pointer; transition:0.3s; }
+    button:hover { background:#005f87; }
+  </style>
 </head>
 <body>
 <header><h1>السنة الثانية - مدرسة الأنفال الخاصة</h1></header>
 <div class="container">
-<h2>اختر الفصل</h2>
-<button onclick="goToChapter('exam2-ch1.html')">الفصل الأول</button>
-<button onclick="goToChapter('exam2-ch2.html')">الفصل الثاني</button>
-<button onclick="goToChapter('exam2-ch3.html')">الفصل الثالث</button>
+  <h2>اختر الفصل</h2>
+  <button onclick="goToChapter('exam2-ch1.html')">الفصل الأول</button>
+  <button onclick="goToChapter('exam2-ch2.html')">الفصل الثاني</button>
+  <button onclick="goToChapter('exam2-ch3.html')">الفصل الثالث</button>
 </div>
-<script>function goToChapter(page){window.location.href=page;}</script>
+<script>
+  function goToChapter(page){ window.location.href = page; }
+</script>
 </body>
 </html>
