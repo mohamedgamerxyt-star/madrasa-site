@@ -74,7 +74,7 @@
   <h2>اختر الصفحة</h2>
   <button onclick="showManagerLogin()">صفحة المدير</button>
   <button onclick="goRegister()">تسجيل التلاميذ</button>
-<button onclick="goExams()">الاختبارات</button>
+  <button onclick="goExams()">الاختبارات</button>
 </div>
 
 <!-- صفحة تسجيل الدخول للمدير -->
@@ -93,6 +93,10 @@
 
   function goRegister() {
     window.location.href = "register.html";
+  }
+
+  function goExams() {
+    window.location.href = "exams.html"; // ينقلك لصفحة الاختبارات
   }
 
   function checkPassword() {
