@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اختبارات - مدرسة الأنفال الخاصة</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      direction: rtl;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: #0077b6;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #005f87;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>الاختبارات - مدرسة الأنفال الخاصة</h1>
+</header>
+
+<div class="container">
+  <h2>اختر السنة الدراسية</h2>
+  <button onclick="goToExam('exam1.html')">السنة الأولى</button>
+  <button onclick="goToExam('exam2.html')">السنة الثانية</button>
+  <button onclick="goToExam('exam3.html')">السنة الثالثة</button>
+  <button onclick="goToExam('exam4.html')">السنة الرابعة</button>
+  <button onclick="goToExam('exam5.html')">السنة الخامسة</button>
+</div>
+
+<script>
+  function goToExam(page) {
+    window.location.href = page;
+  }
+</script>
+</body>
+</html>
